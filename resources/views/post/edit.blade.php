@@ -5,6 +5,15 @@
 </head>
 <body>
 <div style="margin-right: 20%; margin-left: 20%;">
+    @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
     <form action="edit-post" method="POST">
         @csrf
         <input name="id" type="hidden" value="{{$post->id}}">
@@ -17,6 +26,7 @@
             <input class="form-control" name="body" id="body" value="{{$post->body}}">
         </div>
         <div style="padding-top: 20px;">
+            <a class="btn btn-info" href="/" >Trở về</a>
             <input class="btn btn-success" type="submit" name="submit" value="Lưu">
         </div>
     </form>

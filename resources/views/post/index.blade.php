@@ -1,13 +1,11 @@
-<html>
-<head>
-    <title>Quản lý công việc</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-</head>
-<body>
-<div style="margin-right: 20%; margin-left: 20%;">
-    <div>
-        <a class="btn btn-success" href="post/create">Thêm mới</a>
-    </div>
+<x-app-layout>
+    <x-slot name="header">
+        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+            {{ __('list') }}
+        </h2>
+    </x-slot>
+
+    <div style="margin-right: 20%; margin-left: 20%;">
     <div>
         <table class="table">
             <thead>
@@ -32,5 +30,5 @@
         </table>
     </div>
 </div>
-</body>
-</html>
+</x-app-layout>
+
